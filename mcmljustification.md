@@ -181,10 +181,9 @@ The ModelConnect Platform is a comprehensive solution designed to leverage the f
 * **Execution Engine:** A framework for executing AI models defined in MCML across different protocols and environments.
 * **Collaboration and Governance Tools:** Features to facilitate collaboration, version control, and model lifecycle management.
 
-**(Expand on the features and capabilities of the ModelConnect Platform.)**
 
 ## 6. Conclusion: MCML - A Catalyst for Responsible AI Adoption
 
 MCML represents a significant evolution in AI model documentation, moving beyond static descriptions to provide a foundation for actionable, interoperable, and governance-aware AI. By promoting transparency, standardization, and responsible AI practices, MCML empowers organizations to harness the full potential of AI while mitigating risks and building trust.
 
-**(Include a call to action, encouraging readers to learn more, adopt MCML, or contribute to its development.)**
+**(We will be kicking off the open source project for the community and the starting date will be announced soon)**
