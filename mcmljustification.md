@@ -39,8 +39,119 @@ MCML employs a JSON or YAML structure to ensure machine-readability and extensib
 
 MCML utilizes a well-defined schema to ensure consistency and facilitate validation. This schema includes specific data types, validation rules, and constraints for each element in the model definition. Tools and libraries can leverage this schema to automatically validate MCML documents, ensuring compliance and interoperability.
 
-**(Include a more detailed example of an MCML schema or a link to the schema definition.)**
+<details>
+<summary>Sample MCML File</summary>
+<pre><code class="language-json">
+ {
+  "model_name": "Vision Transformer",
+  "version": "2.1",
+  "description": "A deep learning model for image classification using transformer architecture.",
+  "author": "AI Research Lab",
+  "license": "Apache-2.0",
+  "intended_use": "Image classification for general objects in natural scenes.",
+  "limitations": "Not robust to out-of-distribution images; struggles with adversarial attacks.",
 
+  "performance_metrics": [
+    { "metric": "Accuracy", "value": 95.2, "dataset": "ImageNet" },
+    { "metric": "F1 Score", "value": 0.89, "dataset": "ImageNet" }
+  ],
+
+  "training_details": {
+    "dataset": "ImageNet-1K",
+    "algorithm": "Vision Transformer (ViT)",
+    "hardware": "NVIDIA A100 GPU",
+    "epochs": 50
+  },
+
+  "inputs": [
+    {
+      "name": "image",
+      "type": "tensor",
+      "shape": [224, 224, 3],
+      "source": "https://storage.example.com/dataset/image_inputs.zip"
+    }
+  ],
+
+  "outputs": [
+    {
+      "name": "class_label",
+      "type": "string",
+      "description": "Predicted category label for the image."
+    },
+    {
+      "name": "confidence_score",
+      "type": "float",
+      "description": "Confidence level of the prediction."
+    }
+  ],
+
+  "model_assets": [
+    {
+      "type": "model_weights",
+      "file": "https://storage.example.com/models/vit_model_v2.1.pth",
+      "checksum": "abc123456789def"
+    },
+    {
+      "type": "dataset",
+      "file": "https://storage.example.com/datasets/imagenet_training.zip"
+    },
+    {
+      "type": "notebook",
+      "file": "https://storage.example.com/notebooks/vit_training.ipynb"
+    }
+  ],
+
+  "dependencies": [
+    { "name": "PyTorch", "version": "1.12.0", "source": "https://pypi.org/project/torch/" },
+    { "name": "Hugging Face Transformers", "version": "4.21.0", "source": "https://pypi.org/project/transformers/" }
+  ],
+
+  "inference": {
+    "endpoint": "https://api.example.com/inference",
+    "method": "POST",
+    "request_format": "json",
+    "response_format": "json"
+  },
+
+  "batch_inference": {
+    "endpoint": "https://api.example.com/batch_inference",
+    "method": "POST",
+    "batch_size": 32
+  },
+
+  "async_batch_inference": {
+    "submit_endpoint": "https://api.example.com/async_batch/submit",
+    "status_endpoint": "https://api.example.com/async_batch/status",
+    "result_endpoint": "https://api.example.com/async_batch/result",
+    "polling_interval": 5
+  },
+
+  "streaming_inference": {
+    "protocol": "websocket",
+    "endpoint": "wss://api.example.com/streaming"
+  },
+
+  "deployment": {
+    "platforms": ["hugging_face", "AWS SageMaker"],
+    "inference_endpoint": "https://api.example.com/inference"
+  },
+
+  "governance": {
+    "bias_mitigation": "Dataset balancing, adversarial training.",
+    "explainability": true,
+    "compliance": "GDPR"
+  },
+
+  "extra_metadata": {
+    "owner": "AI Research Lab",
+    "release_date": "2025-02-06",
+    "tags": ["computer vision", "transformer", "image classification"]
+  },
+
+  "template": "hugging_face"
+}
+</code></pre>
+</details>
 ### 3.3 Benefits for Diverse Stakeholders
 
 MCML provides value to a wide range of stakeholders:
